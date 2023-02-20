@@ -14,3 +14,4 @@ int main() {
     return 0;
     cout<<"while(p<=s)";
 }
+// solved by Jatin

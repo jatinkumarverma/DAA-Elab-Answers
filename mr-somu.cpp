@@ -18,3 +18,4 @@ int main()
     return 0;
     cout<<"if(n%2==1)";
 }
+// solved by Jatin

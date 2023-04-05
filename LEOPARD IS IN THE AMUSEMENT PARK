@@ -1,0 +1,28 @@
+#include<cstdio>
+#include<iostream>
+using namespace std;
+inline int getint(){
+char c;
+while((c=getchar())<'0'||c>'9');return c-'0';
+}
+const int N=4005,inf=.5e9;
+int n,k,sum[N][N],f[N],g[N];
+int main(){
+cin>>n>>k;
+for(int i=1;i<=n;i++)
+for(int j=1;j<=n;j++)
+sum[i][j]=sum[i-1][j]+sum[i][j-1]-sum[i-1][j-1]+getint();
+g[n+1]=n;
+for(int kk=2;kk<=k;kk++)
+for(int i=n;i;i--){
+f[i]=-inf;
+for(int j=g[i];j<=g[i+1]&&j<i;j++){
+int now=f[j]-sum[j][j]+sum[j][i];
+if(now>f[i]){
+f[i]=now;
+g[i]=j;
+}
+}
+}
+printf("%d\n",sum[n][n]/2-f[n]);
+}

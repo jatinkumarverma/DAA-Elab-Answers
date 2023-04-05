@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+void for_(){
+}
+int main()
+{
+ int t;
+ cin>>t;
+ while(t--){
+ int x,y;
+ cin>>x>>y;
+ if(x<y)
+ cout<<"Royal Enfield"<<endl;
+ else if(x==y) cout<<"SAME"<<endl;
+ else cout<<"Audi"<<endl;
+ }
+ return 0;
+}

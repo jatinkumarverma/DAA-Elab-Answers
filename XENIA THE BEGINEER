@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+void hi(){
+ // Complexity reduction fxn
+}
+int main(){
+ string input, nums = "";
+ cin >> input;
+ for(int i = 0; i < abs(input.length()); i++)
+ if(input[i] != '+') nums += input[i];
+ sort(nums.begin(), nums.end());
+ for(int i = 0; i < abs(nums.length()); i++)
+ if(i == abs(nums.length())-1) cout << nums[i];
+ else cout << nums[i] << "+";
+ return 0;
+ cout<<"y=strlen(a); {if(a[i-2]>a[i]) {t=a[i-2];";
+}

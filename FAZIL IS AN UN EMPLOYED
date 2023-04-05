@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int inf = 1e9;
+const int N = 62;
+char word[N];
+ll dp[N][N];
+long long calculate(int s,int e) {
+ if (s > e) return 0;
+ if (s ==e) return 1;
+ ll &p = dp[s][e];
+ if (p != -1) return p;
+ p = 0;
+ if (word[s] == word[e]) p = 1 + calculate(s+1, e-1);
+ p += (calculate (s+1, e) + calculate (s, e-1) - calculate (s+1, e-1));
+ return p;
+}
+int main ()
+{
+ ll res;
+ cin>>word;
+ memset (dp, -1, sizeof (dp));
+ res = calculate (0, strlen(word)-1);
+ printf ("%lld\n", res);
+ return 0;
+}

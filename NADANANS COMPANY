@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ans cin>>ans[0];cin>>a>>b>>c;
+#define f(n) for(int i=0;i<n;i++)
+void solve(){}
+int main(){
+ int n;cin>>n;
+ int a[n];f(n) cin>>a[i];
+ int M;cin>>M;
+ map<int,int> m;
+ while(M--){
+ int x,y,c;cin>>x>>y>>c;
+ if(m.find(y)==m.end())
+ m[y]=c;
+ else if(c<m[y])
+ m[y]=c;
+ }
+ if((int)m.size()==n-1){
+ long long int sum=0;
+ for(auto j : m){
+ sum+=j.second;
+ }
+ cout<<sum;
+ }
+ else cout<<-1;
+}

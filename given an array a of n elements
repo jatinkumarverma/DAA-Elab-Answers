@@ -1,0 +1,26 @@
+#include <iostream>
+#include <bitset>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while(t>0) {
+        int n;
+        cin >> n;
+        int arr[n];
+        for(int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+        bitset<100001> bset;
+        bset[0] = 1;
+        for(int i = 0; i < n; i++) {
+            bset |= (bset << arr[i]);
+        }
+        cout << bset.count() << endl;
+        t--;
+    }
+    return 0;
+}

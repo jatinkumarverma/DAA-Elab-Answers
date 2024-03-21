@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int items;
+    int a,i,cnt=0;
+    cin>>a>>items;
+    int c[items];
+    string s[items];
+    for(i=0;i<items;i++){
+        cin>>s[i]>>c[i];
+        if(c[i]<a){
+            cout<<"I can afford "<<s[i]<<endl;
+            a=a-c[i];
+        }
+        else{
+            cnt++;
+        cout<<"I can't afford "<<s[i]<<endl;
+        }
+        //cout<<cnt;
+    }
+    if(cnt==items)
+    cout<<"I need more Euro!";
+    else
+    cout<<a;
+    return 0;
+    cout<<"char name[MAX][LEN];int price[MAX] afford[MAX]";
+}
